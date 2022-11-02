@@ -45,8 +45,7 @@ There are many products for service discovery such as [Netflix Eureka](https://g
 Since we already run a [Kubernetes](https://kubernetes.io/) cluster, we use [Spring Cloud Kubernetes](https://spring.io/projects/spring-cloud-kubernetes) for service discovery.
 
 **Authentication and Authorization**
-All endpoints are secured and require authentication. The authentication is done with [Spring Security](https://spring.io/projects/spring-security).
-To be able to use the endpoints, you need a valid JWT token. The token is generated with [Spring Security OAuth2](https://spring.io/projects/spring-security-oauth) from the [Auth Service](./auth-service/README.md).
+For authentication and authorization, [Keycloak](https://www.keycloak.org/) is used. Keycloak is an open source identity and access management solution.
 
 **Caching**
 The [Movie Service](./movie-service/README.md) and [Series Service](./series-service/README.md) are using [Spring Cache](https://spring.io/projects/spring-cache) to cache the content if needed.
@@ -63,12 +62,6 @@ To provide a highly maintainable and testable code, the architecture is based of
 ### [Gateway Service](./gateway-service/README.md)
 The gateway is the entry point for all requests. It is responsible for routing the requests to the correct microservice.
 The gateway is implemented with [Spring Cloud Gateway](https://spring.io/projects/spring-cloud-gateway).
-
-### [Auth Service](./auth-service/README.md)
-The auth service is responsible for authentication and authorization. It provides authentication and authorization for users and clients. 
-The auth service is based on the [Spring Authorization Server](https://spring.io/projects/spring-authorization-server) and holds basic user information and client information in a database.
-The service provides [JWT](https://jwt.io/) tokens for users and clients authenticate. The token is used to authenticate the user and client in the other services.
-Providers such as Google and GitHub can be used to authenticate or register the user.
 
 ### [Account Service](./account-service/README.md)
 The account service is responsible for managing user accounts.
