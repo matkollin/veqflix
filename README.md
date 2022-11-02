@@ -32,7 +32,7 @@
 
 Inspirations for the project were [Netflix](https://netflix.com) and [Amazon Prime Video](https://primevideo.com).
 
-This project is a backend for a streaming platform. It is written in Java 17 with the [Spring framework](https://spring.io/.
+This project is a backend for a streaming platform. It is written in Java 17 with the [Spring framework](https://spring.io/).
 The project is divided into several microservices witch communicate with each other via REST or [RabbitMQ](https://www.rabbitmq.com/).
 The services only contain data and not files such as videos or images.
 
