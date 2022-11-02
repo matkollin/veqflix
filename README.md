@@ -60,29 +60,26 @@ To provide a highly maintainable and testable code, the architecture is based of
     <img src="./.img/veqflix-spring-architecture.png" width="40%"/>
 </div>
 
-### Gateway
+### [Gateway Service](./gateway-service/README.md)
 The gateway is the entry point for all requests. It is responsible for routing the requests to the correct microservice.
 The gateway is implemented with [Spring Cloud Gateway](https://spring.io/projects/spring-cloud-gateway).
 
-### Auth Service
+### [Auth Service](./auth-service/README.md)
 The auth service is responsible for authentication and authorization. It provides authentication and authorization for users and clients. 
 The auth service is based on the [Spring Authorization Server](https://spring.io/projects/spring-authorization-server) and holds basic user information and client information in a database.
 The service provides [JWT](https://jwt.io/) tokens for users and clients authenticate. The token is used to authenticate the user and client in the other services.
 Providers such as Google and GitHub can be used to authenticate or register the user.
 
-### Account Service
+### [Account Service](./account-service/README.md)
 The account service is responsible for managing user accounts.
 
-### Catalog Service
-The catalog service is responsible for managing the catalog. The catalog contains movies and series.
-
-### Movie Service
+### [Movie Service](./movie-service/README.md)
 The movie service is responsible for managing movies.
 
-### Series Service
+### [Series Service](./series-service/README.md)
 The series service is responsible for managing series.
 
-### Notification Service
+### [Notification Service](./notification-service/README.md)
 The notification service is responsible for sending notifications to users.
 
 ## Getting started
