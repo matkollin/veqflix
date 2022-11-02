@@ -27,8 +27,14 @@
 </p>
 
 ## Introduction
-Veqflix is a full backend for a streaming platform.
 > The project is intended as demonstration and should be used in production.
+> The project is not yet complete and is still under development.
+
+Inspirations for the project were [Netflix](https://netflix.com) and [Amazon Prime Video](https://primevideo.com).
+
+This project is a backend for a streaming platform. It is written in Java 17 with the [Spring framework](https://spring.io/.
+The project is divided into several microservices witch communicate with each other via REST or [RabbitMQ](https://www.rabbitmq.com/).
+The services only contain data and not files such as videos or images.
 
 ## Architecture
 To provide a highly maintainable and testable code, the architecture is based of the [microservice architecture pattern](https://microservices.io/patterns/microservices.html).
