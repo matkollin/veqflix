@@ -36,6 +36,24 @@ This project is a backend for a streaming platform. It is written in Java 17 wit
 The project is divided into several microservices witch communicate with each other via REST or [RabbitMQ](https://www.rabbitmq.com/).
 The services only contain data and not files such as videos or images.
 
+**Streams vs Loops**
+In this project I used streams preferentially. Streams are more readable and easier to understand.
+However, if you like to have the best performance, you can use loops instead.
+
+**Service Discovery**
+There are many products for service discovery such as [Netflix Eureka](https://github.com/Netflix/eureka), [Spring Cloud Kubernetes](https://spring.io/projects/spring-cloud-kubernetes), [Consul](https://www.consul.io/) and more.
+Since we already run a [Kubernetes](https://kubernetes.io/) cluster, we use [Spring Cloud Kubernetes](https://spring.io/projects/spring-cloud-kubernetes) for service discovery.
+
+**Authentication and Authorization**
+All endpoints are secured and require authentication. The authentication is done with [Spring Security](https://spring.io/projects/spring-security).
+To be able to use the endpoints, you need a valid JWT token. The token is generated with [Spring Security OAuth2](https://spring.io/projects/spring-security-oauth) from the [Auth Service](./auth-service/README.md).
+
+**Caching**
+The [Movie Service](./movie-service/README.md) and [Series Service](./series-service/README.md) are using [Spring Cache](https://spring.io/projects/spring-cache) to cache the content if needed.
+
+**Database**
+The database is a [PostgreSQL](https://www.postgresql.org/) database. The database is running in a [Kubernetes](https://kubernetes.io/) cluster for development and testing.
+
 ## Architecture
 To provide a highly maintainable and testable code, the architecture is based of the [microservice architecture pattern](https://microservices.io/patterns/microservices.html).
 <div style="font-size:0;" align="center">
@@ -54,6 +72,9 @@ Providers such as Google and GitHub can be used to authenticate or register the 
 
 ### Account Service
 The account service is responsible for managing user accounts.
+
+### Catalog Service
+The catalog service is responsible for managing the catalog. The catalog contains movies and series.
 
 ### Movie Service
 The movie service is responsible for managing movies.
