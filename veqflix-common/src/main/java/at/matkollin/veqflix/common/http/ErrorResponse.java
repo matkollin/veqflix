@@ -22,6 +22,11 @@ public class ErrorResponse {
 
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd@HH:mm:ss.SSSZ")
   @JsonSerialize(using = ZonedDateTimeSerializer.class)
-  private ZonedDateTime timestamp;
+  private ZonedDateTime timestamp = ZonedDateTime.now();
+
+  public ErrorResponse(HttpStatus httpStatus, String message) {
+    this.httpStatus = httpStatus;
+    this.message = message;
+  }
 
 }
