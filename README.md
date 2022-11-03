@@ -34,7 +34,6 @@ Inspirations for the project were [Netflix](https://netflix.com) and [Amazon Pri
 
 This project is a backend for a streaming platform. It is written in Java 17 with the [Spring framework](https://spring.io/).
 The project is divided into several microservices witch communicate with each other via REST or [RabbitMQ](https://www.rabbitmq.com/).
-The services only contain data and not files such as videos or images.
 
 **Streams vs Loops**
 In this project I used streams preferentially. Streams are more readable and easier to understand.
@@ -48,7 +47,7 @@ Since we already run a [Kubernetes](https://kubernetes.io/) cluster, we use [Spr
 For authentication and authorization, [Keycloak](https://www.keycloak.org/) is used. Keycloak is an open source identity and access management solution.
 
 **Caching**
-The [Movie Service](./movie-service/README.md) and [Series Service](./series-service/README.md) are using [Spring Cache](https://spring.io/projects/spring-cache) to cache the content if needed.
+The [Catalog](./catalog/README.md) service uses [Spring Cache](https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#cache) to cache the catalog data.
 
 **Database**
 The database is a [PostgreSQL](https://www.postgresql.org/) database. The database is running in a [Kubernetes](https://kubernetes.io/) cluster for development and testing.
@@ -66,11 +65,8 @@ The gateway is implemented with [Spring Cloud Gateway](https://spring.io/project
 ### [Account Service](./account-service/README.md)
 The account service is responsible for managing user accounts.
 
-### [Movie Service](./movie-service/README.md)
-The movie service is responsible for managing movies.
-
-### [Series Service](./series-service/README.md)
-The series service is responsible for managing series.
+### [Catalog Service](./catalog-service/README.md)
+The catalog service is responsible for managing the catalog.
 
 ### [Notification Service](./notification-service/README.md)
 The notification service is responsible for sending notifications to users.
